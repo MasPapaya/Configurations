@@ -70,19 +70,19 @@ class Entity extends ConfigurationsAppModel {
      * @var array
      */
     public $hasMany = array(
-	'DocumentType' => array(
-	    'className' => 'DocumentType',
-	    'foreignKey' => 'entity_id',
-	    'dependent' => false,
-	    'conditions' => '',
-	    'fields' => '',
-	    'order' => '',
-	    'limit' => '',
-	    'offset' => '',
-	    'exclusive' => '',
-	    'finderQuery' => '',
-	    'counterQuery' => ''
-	)
+//	'DocumentType' => array(
+//	    'className' => 'DocumentType',
+//	    'foreignKey' => 'entity_id',
+//	    'dependent' => false,
+//	    'conditions' => '',
+//	    'fields' => '',
+//	    'order' => '',
+//	    'limit' => '',
+//	    'offset' => '',
+//	    'exclusive' => '',
+//	    'finderQuery' => '',
+//	    'counterQuery' => ''
+//	)
     );
 
 }

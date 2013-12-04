@@ -72,19 +72,19 @@ class Language extends ConfigurationsAppModel {
 	 * @var array
 	 */
 	public $hasMany = array(
-		'Document' => array(
-			'className' => 'Document',
-			'foreignKey' => 'language_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		)
+//		'Document' => array(
+//			'className' => 'Document',
+//			'foreignKey' => 'language_id',
+//			'dependent' => false,
+//			'conditions' => '',
+//			'fields' => '',
+//			'order' => '',
+//			'limit' => '',
+//			'offset' => '',
+//			'exclusive' => '',
+//			'finderQuery' => '',
+//			'counterQuery' => ''
+//		)
 	);
 
 }
