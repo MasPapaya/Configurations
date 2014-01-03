@@ -58,6 +58,19 @@ CREATE TABLE IF NOT EXISTS locations (
 ALTER TABLE locations ADD INDEX loc_loc_idx (parent_id ASC);
 
 
+
+-- -----------------------------------------------------
+-- Table settings
+-- -----------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS settings (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  name VARCHAR(45) NOT NULL,  
+  value VARCHAR(100) NOT NULL,  
+  PRIMARY KEY (id)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+
 -- -----------------------------------------------------
 -- Constraints
 -- -----------------------------------------------------
