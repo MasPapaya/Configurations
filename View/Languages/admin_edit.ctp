@@ -4,7 +4,7 @@
 	</div>
 	<?php echo $this->Form->create('Language'); ?>
 	<fieldset>
-		<legend><?php echo __('Edit Language'); ?></legend>
+		<legend><?php echo __d('configurations','Edit Language'); ?></legend>
 		<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('name');

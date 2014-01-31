@@ -4,7 +4,7 @@
 	</div>
 	<?php echo $this->Form->create('Entity'); ?>
 	<fieldset>
-		<legend><?php echo __('Edit Entity'); ?></legend>
+		<legend><?php echo __d('configurations','Edit Entity'); ?></legend>
 		<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('name');

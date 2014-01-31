@@ -9,7 +9,7 @@
 		<div class="span5">
 			<?php echo $this->Form->create('Location'); ?>
 			<fieldset>
-				<legend><?php echo __('Add Location'); ?></legend>
+				<legend><?php echo __d('configurations','Add Location'); ?></legend>
 				<?php
 				echo $this->Form->input('parent_id', array('empty' => true, 'options' => $locations));
 				echo $this->Form->input('name');

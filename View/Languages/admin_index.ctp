@@ -1,7 +1,7 @@
 <div class="users">
-	<?php echo $this->Html->link('<i class="icon-plus-sign icon-white"></i>&nbsp;' . __('New Language'), array('action' => 'add', 'admin' => true), array('class' => 'btn btn-primary', 'escape' => FALSE)); ?>
+	<?php echo $this->Html->link('<i class="icon-plus-sign icon-white"></i>&nbsp;' . __d('configurations','New Language'), array('action' => 'add', 'admin' => true), array('class' => 'btn btn-primary', 'escape' => FALSE)); ?>
 	<div>
-		<h2><?php echo __('Languages'); ?></h2>
+		<h2><?php echo __d('configurations','Languages'); ?></h2>
 		<table class="table table-condensed table-bordered table-striped">
 			<thead>
 				<tr>

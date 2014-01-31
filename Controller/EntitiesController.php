@@ -32,7 +32,7 @@ class EntitiesController extends ConfigurationsAppController {
 	 */
 	public function admin_view($id = null) {
 		if (!$this->Entity->exists($id)) {
-			throw new NotFoundException(__('Invalid entity'), 'flash/warning');
+			throw new NotFoundException(__d('configurations','Invalid entity'), 'flash/warning');
 		}
 		$options = array('conditions' => array('Entity.' . $this->Entity->primaryKey => $id));
 		$this->set('entity', $this->Entity->find('first', $options));
@@ -47,10 +47,10 @@ class EntitiesController extends ConfigurationsAppController {
 		if ($this->request->is('post')) {
 			$this->Entity->create();
 			if ($this->Entity->save($this->request->data)) {
-				$this->Session->setFlash(__('The entity has been saved'), 'flash/success');
+				$this->Session->setFlash(__d('configurations','The entity has been saved'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The entity could not be saved. Please, try again.'), 'flash/error');
+				$this->Session->setFlash(__d('configurations','The entity could not be saved. Please, try again.'), 'flash/error');
 			}
 		}
 	}
@@ -64,14 +64,14 @@ class EntitiesController extends ConfigurationsAppController {
 	 */
 	public function admin_edit($id = null) {
 		if (!$this->Entity->exists($id)) {
-			throw new NotFoundException(__('Invalid entity'), 'flash/warning');
+			throw new NotFoundException(__d('configurations','Invalid entity'), 'flash/warning');
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Entity->save($this->request->data)) {
-				$this->Session->setFlash(__('The entity has been saved'), 'flash/success');
+				$this->Session->setFlash(__d('configurations','The entity has been saved'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The entity could not be saved. Please, try again.'), 'flash/warning');
+				$this->Session->setFlash(__d('configurations','The entity could not be saved. Please, try again.'), 'flash/warning');
 			}
 		} else {
 			$options = array('conditions' => array('Entity.' . $this->Entity->primaryKey => $id));
@@ -89,14 +89,14 @@ class EntitiesController extends ConfigurationsAppController {
 	public function admin_delete($id = null) {
 		$this->Entity->id = $id;
 		if (!$this->Entity->exists()) {
-			throw new NotFoundException(__('Invalid entity'), 'flash/warning');
+			throw new NotFoundException(__d('configurations','Invalid entity'), 'flash/warning');
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Entity->delete()) {
-			$this->Session->setFlash(__('Entity deleted'), 'flash/success');
+			$this->Session->setFlash(__d('configurations','Entity deleted'), 'flash/success');
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Entity was not deleted'), 'flash/error');
+		$this->Session->setFlash(__d('configurations','Entity was not deleted'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
 

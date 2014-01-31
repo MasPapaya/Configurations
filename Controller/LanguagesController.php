@@ -32,7 +32,7 @@ class LanguagesController extends ConfigurationsAppController {
 	 */
 	public function admin_view($id = null) {
 		if (!$this->Language->exists($id)) {
-			throw new NotFoundException(__('Invalid language'), 'flash/warning');
+			throw new NotFoundException(__d('configurations','Invalid language'), 'flash/warning');
 		}
 		$options = array('conditions' => array('Language.' . $this->Language->primaryKey => $id));
 		$this->set('language', $this->Language->find('first', $options));
@@ -47,10 +47,10 @@ class LanguagesController extends ConfigurationsAppController {
 		if ($this->request->is('post')) {
 			$this->Language->create();
 			if ($this->Language->save($this->request->data)) {
-				$this->Session->setFlash(__('The language has been saved'), 'flash/success');
+				$this->Session->setFlash(__d('configurations','The language has been saved'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The language could not be saved. Please, try again.'), 'flash/error');
+				$this->Session->setFlash(__d('configurations','The language could not be saved. Please, try again.'), 'flash/error');
 			}
 		}
 	}
@@ -64,14 +64,14 @@ class LanguagesController extends ConfigurationsAppController {
 	 */
 	public function admin_edit($id = null) {
 		if (!$this->Language->exists($id)) {
-			throw new NotFoundException(__('Invalid language'), 'flash/warning');
+			throw new NotFoundException(__d('configurations','Invalid language'), 'flash/warning');
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Language->save($this->request->data)) {
-				$this->Session->setFlash(__('The language has been saved'), 'flash/success');
+				$this->Session->setFlash(__d('configurations','The language has been saved'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The language could not be saved. Please, try again.'), 'flash/error');
+				$this->Session->setFlash(__d('configurations','The language could not be saved. Please, try again.'), 'flash/error');
 			}
 		} else {
 			$options = array('conditions' => array('Language.' . $this->Language->primaryKey => $id));
@@ -89,14 +89,14 @@ class LanguagesController extends ConfigurationsAppController {
 	public function admin_delete($id = null) {
 		$this->Language->id = $id;
 		if (!$this->Language->exists()) {
-			throw new NotFoundException(__('Invalid language'), 'flash/warning');
+			throw new NotFoundException(__d('configurations','Invalid language'), 'flash/warning');
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Language->delete()) {
-			$this->Session->setFlash(__('Language deleted'), 'flash/success');
+			$this->Session->setFlash(__d('configurations','Language deleted'), 'flash/success');
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Language was not deleted'), 'flash/error');
+		$this->Session->setFlash(__d('configurations','Language was not deleted'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
 

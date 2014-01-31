@@ -15,21 +15,6 @@ class LocationsController extends ConfigurationsAppController {
 		$this->Auth->allow(array('load'));
 	}
 
-//	public function isAuthorized() {
-//
-//		switch ($this->Auth->user('group_id')) {
-//			case 1:
-//			case 2:
-//				return true;
-//				break;
-//			case 3:
-//				return false;
-//				break;
-//			default:
-//				return false;
-//				break;
-//		}
-//	}
 
 	/**
 	 * index method
@@ -50,7 +35,7 @@ class LocationsController extends ConfigurationsAppController {
 
 	function admin_view($id = null) {
 		if (!$id) {
-			$this->Session->setFlash(__('Invalid location', true));
+			$this->Session->setFlash(__d('configurations','Invalid location', true));
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->set('location', $this->Location->read(null, $id));
@@ -68,10 +53,10 @@ class LocationsController extends ConfigurationsAppController {
 		if ($this->request->is('post')) {
 			$this->Location->create();
 			if ($this->Location->save($this->request->data)) {
-				$this->Session->setFlash(__('The location has been saved'), 'flash/success');
+				$this->Session->setFlash(__d('configurations','The location has been saved'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The location could not be saved. Please, try again.'), 'flash/error');
+				$this->Session->setFlash(__d('configurations','The location could not be saved. Please, try again.'), 'flash/error');
 			}
 		}
 		$parentLocations = $this->Location->ParentLocation->find('list');
@@ -90,14 +75,14 @@ class LocationsController extends ConfigurationsAppController {
 		$this->set('fluid', 'fluid');
 		$this->Location->id = $id;
 		if (!$this->Location->exists()) {
-			throw new NotFoundException(__('Invalid location'));
+			throw new NotFoundException(__d('configurations','Invalid location'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Location->save($this->request->data)) {
-				$this->Session->setFlash(__('The location has been saved'), 'flash/success');
+				$this->Session->setFlash(__d('configurations','The location has been saved'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The location could not be saved. Please, try again.'), 'flash/error');
+				$this->Session->setFlash(__d('configurations','The location could not be saved. Please, try again.'), 'flash/error');
 			}
 		} else {
 			$this->request->data = $this->Location->read(null, $id);
@@ -116,13 +101,13 @@ class LocationsController extends ConfigurationsAppController {
 		}
 		$this->Location->id = $id;
 		if (!$this->Location->exists()) {
-			throw new NotFoundException(__('Invalid location'));
+			throw new NotFoundException(__d('configurations','Invalid location'));
 		}
 		if ($this->Location->delete()) {
-			$this->Session->setFlash(__('Location deleted'), 'flash/success');
+			$this->Session->setFlash(__d('configurations','Location deleted'), 'flash/success');
 			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Location was not deleted'), 'flash/error');
+		$this->Session->setFlash(__d('configurations','Location was not deleted'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
 

@@ -9,7 +9,7 @@
 
 
 <div class="span8">
-	<h2><?php echo __('Language'); ?></h2>
+	<h2><?php echo __d('configurations','Language'); ?></h2>
 	<dl>
 		<dt><?php echo __('Id'); ?></dt>
 		<dd>
