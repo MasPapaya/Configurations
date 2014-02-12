@@ -1,7 +1,7 @@
 <div class="users">
-	<?php echo $this->Html->link('<i class="icon-plus-sign icon-white"></i>&nbsp;' . __d('configurations','New Language'), array('action' => 'add', 'admin' => true), array('class' => 'btn btn-primary', 'escape' => FALSE)); ?>
+	<?php echo $this->Html->link('<i class="glyphicon glyphicon-plus-sign icon-white"></i>&nbsp;' . __d('configurations', 'New Language'), array('action' => 'add', 'admin' => true), array('class' => 'btn btn-primary', 'escape' => FALSE)); ?>
 	<div>
-		<h2><?php echo __d('configurations','Languages'); ?></h2>
+		<h2><?php echo __d('configurations', 'Languages'); ?></h2>
 		<table class="table table-condensed table-bordered table-striped">
 			<thead>
 				<tr>
@@ -24,9 +24,9 @@
 						</td>
 						<td class="actions">
 							<div class="btn-group">	
-								<?php echo $this->Html->link('<i class="icon-pencil"></i>', array('action' => 'edit', $language['Language']['id']), array('escape' => FALSE, 'class' => 'btn')) ?>														
+								<?php echo $this->Html->link('<i class="glyphicon glyphicon-pencil"></i>', array('action' => 'edit', $language['Language']['id']), array('escape' => FALSE, 'class' => 'btn btn-default')) ?>														
 								<?php
-								echo $this->Form->postLink('<i class="icon-trash icon-white"></i>', array('action' => 'delete', $language['Language']['id']), array('class' => 'btn btn-danger', 'escape' => FALSE), __('Are you sure you want to delete # %s?', $language['Language']['name']));
+								echo $this->Form->postLink('<i class="glyphicon glyphicon-trash icon-white"></i>', array('action' => 'delete', $language['Language']['id']), array('class' => 'btn btn-danger', 'escape' => FALSE), __('Are you sure you want to delete # %s?', $language['Language']['name']));
 								?>
 							</div>												
 						</td>
@@ -34,8 +34,8 @@
 				<?php endforeach; ?>
 			</tbody>
 		</table>
-		<div class="pagination pagination-centered">
-			<ul>
+		<div class="pagination-centered">
+			<ul class="pagination">
 				<?php echo $this->Paginator->prev('<', array('tag' => 'li',), NULL, array('tag' => 'li', 'disabledTag' => 'a', 'class' => 'disabled')); ?>
 				<?php echo $this->Paginator->numbers(array('tag' => 'li', 'separator' => '', 'currentTag' => 'a', 'currentClass' => 'active')); ?>
 				<?php echo $this->Paginator->next('>', array('tag' => 'li',), NULL, array('tag' => 'li', 'disabledTag' => 'a', 'class' => 'disabled')); ?>

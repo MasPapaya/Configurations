@@ -1,7 +1,7 @@
 <div class="users">
-	<?php echo $this->Html->link('<i class="icon-plus-sign icon-white"></i>&nbsp;' . __d('configurations','New Location'), array('action' => 'add', 'admin' => true), array('class' => 'btn btn-primary', 'escape' => FALSE)); ?>
+	<?php echo $this->Html->link('<i class="glyphicon glyphicon-plus-sign icon-white"></i>&nbsp;' . __d('configurations', 'New Location'), array('action' => 'add', 'admin' => true), array('class' => 'btn btn-primary', 'escape' => FALSE)); ?>
 	<div>
-		<h2><?php echo __d('configurations','Locations'); ?></h2>
+		<h2><?php echo __d('configurations', 'Locations'); ?></h2>
 		<table class="table table-condensed table-bordered table-striped">
 			<thead>
 				<tr>
@@ -35,11 +35,11 @@
 							<div class="btn-group">	
 
 								<?php
-								echo $this->Html->link('<i class="icon-eye-open"></i>', array('action' => 'view', $location['Location']['id']), array('escape' => FALSE, 'class' => 'btn'));
-								echo $this->Html->link('<i class="icon-pencil"></i>', array('action' => 'edit', $location['Location']['id']), array('escape' => FALSE, 'class' => 'btn'));
+								echo $this->Html->link('<i class="glyphicon glyphicon-eye-open"></i>', array('action' => 'view', $location['Location']['id']), array('escape' => FALSE, 'class' => 'btn btn-default'));
+								echo $this->Html->link('<i class="glyphicon glyphicon-pencil"></i>', array('action' => 'edit', $location['Location']['id']), array('escape' => FALSE, 'class' => 'btn btn-default'));
 								?>														
 								<?php
-								echo $this->Form->postLink('<i class="icon-trash icon-white"></i>', array('action' => 'delete', $location['Location']['id']), array('class' => 'btn btn-danger', 'escape' => FALSE), __('Are you sure you want to delete # %s?', $location['Location']['id']));
+								echo $this->Form->postLink('<i class="glyphicon glyphicon-trash icon-white"></i>', array('action' => 'delete', $location['Location']['id']), array('class' => 'btn btn-danger', 'escape' => FALSE), __('Are you sure you want to delete # %s?', $location['Location']['id']));
 								?>
 							</div>	
 
@@ -48,8 +48,8 @@
 				<?php endforeach; ?>
 			</tbody>
 		</table>
-		<div class="pagination pagination-centered">
-			<ul>
+		<div class="pagination-centered">
+			<ul class="pagination">
 				<?php echo $this->Paginator->prev('<', array('tag' => 'li',), NULL, array('tag' => 'li', 'disabledTag' => 'a', 'class' => 'disabled')); ?>
 				<?php echo $this->Paginator->numbers(array('tag' => 'li', 'separator' => '', 'currentTag' => 'a', 'currentClass' => 'active')); ?>
 				<?php echo $this->Paginator->next('>', array('tag' => 'li',), NULL, array('tag' => 'li', 'disabledTag' => 'a', 'class' => 'disabled')); ?>
