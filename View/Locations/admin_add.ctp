@@ -6,7 +6,7 @@
 		<?php echo $this->Html->link('<i class="glyphicon glyphicon-list icon-white"></i>&nbsp;' . __('Back to List'), array('action' => 'index', 'admin' => true), array('class' => 'btn btn-primary', 'escape' => FALSE)); ?>	
 	</div>
 	<div class="row-fluid">
-		<div class="span5">
+		<div class="col-md-6">
 			<?php echo $this->Form->create('Location'); ?>
 			<fieldset>
 				<legend><?php echo __d('configurations','Add Location'); ?></legend>
@@ -23,7 +23,7 @@
 			</fieldset>
 			<?php echo $this->Form->end(array('label' => __('Save'), 'class' => 'btn btn-primary')); ?>
 		</div>
-		<div class="span6">
+		<div class="col-md-6">
 			<div id="map_canvas" style="width:100%; height:475px" ><script type="text/javascript">initialize();</script></div>
 		</div>
 	</div>

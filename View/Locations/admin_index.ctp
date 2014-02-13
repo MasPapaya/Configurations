@@ -1,5 +1,11 @@
 <div class="users">
-	<?php echo $this->Html->link('<i class="glyphicon glyphicon-plus-sign icon-white"></i>&nbsp;' . __d('configurations', 'New Location'), array('action' => 'add', 'admin' => true), array('class' => 'btn btn-primary', 'escape' => FALSE)); ?>
+	<div class="btn-group">
+		<?php echo $this->Html->link('<i class="glyphicon glyphicon-plus-sign icon-white"></i>&nbsp;' . __d('configurations', 'New Location'), array('action' => 'add', 'admin' => true), array('class' => 'btn btn-primary', 'escape' => FALSE)); ?>	
+		<?php echo $this->Html->link('<i class="glyphicon glyphicon-refresh icon-white"></i>&nbsp;' . __d('configurations', 'Repair'), array('action' => 'repair', 'admin' => true), array('class' => 'btn btn-primary', 'escape' => FALSE)); ?>
+	</div>
+
+
+
 	<div>
 		<h2><?php echo __d('configurations', 'Locations'); ?></h2>
 		<table class="table table-condensed table-bordered table-striped">

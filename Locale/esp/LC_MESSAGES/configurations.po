@@ -58,3 +58,6 @@ msgid "Location"
 msgstr "Ubicación"
 msgid "The location has been saved"
 msgstr "La ubicación ha sido guardada"
+
+msgid "Repair"
+msgstr "Reparar"
