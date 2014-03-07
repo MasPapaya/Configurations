@@ -148,7 +148,6 @@ class Location extends ConfigurationsAppModel {
 
 		if ($with_sections) {
 			return $this->sections($result);
-//			return $result;
 		} else {
 			return $result;
 		}
